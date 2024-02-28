@@ -1,0 +1,20 @@
+.playcard_middle_body {
+    position: relative;
+    border-radius: 4px;
+    padding: 10px 10px;
+    margin-right: 2px;
+    transition: transform 0.3s ease;
+}
+
+.playcard_middle_body:hover {
+    cursor: pointer;
+    transform: scale(1.05) rotateZ(-5deg);
+}
+
+.playcard_middle_number {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+}

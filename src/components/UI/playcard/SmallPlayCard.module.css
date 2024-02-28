@@ -1,0 +1,22 @@
+.playcard_small_body {
+    position: relative;
+    border-radius: 2px;
+    padding: 2px 4px;
+    width: 30px;
+    height: 45px;
+    font-weight: bold;
+    color: white;
+    margin-right: 2px;
+    transition: transform 0.3s ease;
+}
+
+.playcard_small_body:hover {
+    cursor: pointer;
+    transform: scale(1.05) rotateZ(-5deg);
+}
+
+.playcard_small_number {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
