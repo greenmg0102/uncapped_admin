@@ -103,6 +103,7 @@ const Contacts = lazy(() => import('../pages/poker/admin/systemManager/UserAdmin
 const RoleAdmin = lazy(() => import('../pages/poker/admin/systemManager/RoleAdmin'));
 const PremiumSetting = lazy(() => import('../pages/poker/admin/systemManager/PremiumSetting'));
 const Support = lazy(() => import('../pages/poker/admin/support'));
+const ManagingNotification = lazy(() => import('../pages/poker/admin/notification'));
 const PokerFileUpload = lazy(() => import('../pages/poker/user/upload/FileUpload'));
 const Dashboard = lazy(() => import('../pages/poker/user/upload'));
 const GameProcess = lazy(() => import('../pages/poker/user/process'));
@@ -149,6 +150,10 @@ const routes = [
     {
         path: '/admin/support',
         element: <Support />,
+    },
+    {
+        path: '/admin/notification',
+        element: <ManagingNotification />,
     },
     
     {

@@ -223,23 +223,52 @@ const Sidebar = () => {
                                         <button
                                             type="button"
                                             className={clsx(
-                                                `${currentMenu === 'Suppor Admin' ? 'active' : ''} nav-link group w-full`
+                                                `${currentMenu === 'Notification Admin' ? 'active' : ''} nav-link group w-full`
                                             )}
-                                            onClick={() => toggleMenu('Suppor Admin')}
+                                            onClick={() => toggleMenu('Notification Admin')}
                                         >
                                             <div className={clsx("flex items-center")}>
-                                                <svg viewBox="64 64 896 896" focusable="false" data-icon="edit" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M257.7 752c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 000-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 009.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89zM880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32z"></path></svg>
-                                                <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('Suppor Admin')}</span>
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="notification" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M880 112c-3.8 0-7.7.7-11.6 2.3L292 345.9H128c-8.8 0-16 7.4-16 16.6v299c0 9.2 7.2 16.6 16 16.6h101.7c-3.7 11.6-5.7 23.9-5.7 36.4 0 65.9 53.8 119.5 120 119.5 55.4 0 102.1-37.6 115.9-88.4l408.6 164.2c3.9 1.5 7.8 2.3 11.6 2.3 16.9 0 32-14.2 32-33.2V145.2C912 126.2 897 112 880 112zM344 762.3c-26.5 0-48-21.4-48-47.8 0-11.2 3.9-21.9 11-30.4l84.9 34.1c-2 24.6-22.7 44.1-47.9 44.1zm496 58.4L318.8 611.3l-12.9-5.2H184V417.9h121.9l12.9-5.2L840 203.3v617.4z"></path></svg>
+                                                <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('Notification Admin')}</span>
                                             </div>
 
-                                            <div className={clsx(currentMenu === 'Suppor Admin' ? 'rotate-90' : 'rtl:rotate-180')} >
+                                            <div className={clsx(currentMenu === 'Notification Admin' ? 'rotate-90' : 'rtl:rotate-180')} >
                                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M9 5L15 12L9 19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                                 </svg>
                                             </div>
                                         </button>
 
-                                        <AnimateHeight duration={300} height={currentMenu === 'Suppor Admin' ? 'auto' : 0}>
+                                        <AnimateHeight duration={300} height={currentMenu === 'Notification Admin' ? 'auto' : 0}>
+                                            <ul className="sub-menu text-gray-500">
+                                                <li className={clsx(roleDetection(availableRoleList, "Sales") ? "" : "")} >
+                                                    <NavLink to="/admin/notification">{t('Notification')}</NavLink>
+                                                </li>
+                                            </ul>
+                                        </AnimateHeight>
+                                    </li>
+                                    
+                                    <li className='menu nav-item'>
+                                        <button
+                                            type="button"
+                                            className={clsx(
+                                                `${currentMenu === 'Support Admin' ? 'active' : ''} nav-link group w-full`
+                                            )}
+                                            onClick={() => toggleMenu('Support Admin')}
+                                        >
+                                            <div className={clsx("flex items-center")}>
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.2 8.1-39.2 22.3-52.1 40.9-13.1 19-19.9 41.8-19.9 64.9V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-22.7a48.3 48.3 0 0130.9-44.8c59-22.7 97.1-74.7 97.1-132.5.1-39.3-17.1-76-48.3-103.3zM472 732a40 40 0 1080 0 40 40 0 10-80 0z"></path></svg>
+                                                <span className="ltr:pl-3 rtl:pr-3 text-black dark:text-[#506690] dark:group-hover:text-white-dark">{t('Support Admin')}</span>
+                                            </div>
+
+                                            <div className={clsx(currentMenu === 'Support Admin' ? 'rotate-90' : 'rtl:rotate-180')} >
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9 5L15 12L9 19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
+                                            </div>
+                                        </button>
+
+                                        <AnimateHeight duration={300} height={currentMenu === 'Support Admin' ? 'auto' : 0}>
                                             <ul className="sub-menu text-gray-500">
                                                 <li className={clsx(roleDetection(availableRoleList, "Sales") ? "" : "")} >
                                                     <NavLink to="/admin/support">{t('Checker')}</NavLink>
