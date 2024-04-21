@@ -58,7 +58,7 @@ export default function CreatingModal({ isOpen, setIsOpen, setBlogList }: any) {
             formData.append("image", selectedFile);
 
             // Make the API request using formData
-            fetch("https://api.uncappedtheory.com/api/v1/admin/blog/image-upload", {
+            fetch("http://localhost:8000/api/v1/admin/blog/image-upload", {
                 method: "POST",
                 body: formData,
             })
